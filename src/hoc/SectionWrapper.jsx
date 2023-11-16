@@ -19,6 +19,7 @@ function SectionWrapper(Component, idName) {
       </motion.section>
     );
   }
+  return HOC;
 }
 
 export default SectionWrapper;
