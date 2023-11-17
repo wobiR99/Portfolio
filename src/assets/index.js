@@ -30,6 +30,8 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import portfolioLogo from "./portfolioLogo.png";
+import buildHubb_logo from "./company/buildhubb_logo.jpg";
+import eventTrak from "./EventTrak.png";
 
 export {
   logo,
@@ -61,4 +63,6 @@ export {
   carrent,
   jobit,
   tripguide,
+  buildHubb_logo,
+  eventTrak,
 };
