@@ -41,7 +41,7 @@ const About = () => {
       >
         I'm a skilled software developer with experience in Javascript, and
         expertise in frameworks like React. I'm a quick learner and collaborate
-        closely with clients to craete efficient, scalable, and user-friendly
+        closely with clients to create efficient, scalable, and user-friendly
         solutions that solve real-world problems. Let's work together to bring
         your ideas to life!
       </motion.p>
