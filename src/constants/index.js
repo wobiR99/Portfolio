@@ -187,7 +187,7 @@ const projects = [
       },
     ],
     image: eventTrak,
-    source_code_link: "",
+    source_code_link: "https://event-trak-frontendd.vercel.app/",
   },
 ];
 

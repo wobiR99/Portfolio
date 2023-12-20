@@ -38,11 +38,15 @@ const ProjectCard = ({
               }}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
-              <img
-                src={github}
-                alt="github"
-                className="w-1/2 h-1/2 object-contain"
-              />
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="#fff"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M17.565 14.546a1 1 0 0 1-.709-1.7l1.968-1.978a4.028 4.028 0 0 0 0-5.687 4.025 4.025 0 0 0-5.686 0l-1.964 1.971a1 1 0 1 1-1.418-1.411l1.968-1.978A6.017 6.017 0 0 1 22 8.023a5.935 5.935 0 0 1-1.764 4.256l-1.962 1.973a1 1 0 0 1-.709.294Zm-5.291 5.694 1.979-1.968a1 1 0 0 0-1.41-1.418l-1.981 1.97a4.02 4.02 0 0 1-5.688-5.683l1.978-1.968a1 1 0 1 0-1.41-1.418l-1.98 1.97a6.02 6.02 0 0 0 8.512 8.515Zm-2.567-4.533 6.026-6.025a1 1 0 0 0-1.414-1.414l-6.026 6.025a1 1 0 1 0 1.414 1.414Z"></path>
+              </svg>
             </div>
           </div>
         </div>
