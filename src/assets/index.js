@@ -32,6 +32,7 @@ import tripguide from "./tripguide.png";
 import portfolioLogo from "./portfolioLogo.png";
 import buildHubb_logo from "./company/buildhubb_logo.jpg";
 import eventTrak from "./EventTrak.png";
+import share_prompts from "./share_prompts.png";
 
 export {
   logo,
@@ -65,4 +66,5 @@ export {
   tripguide,
   buildHubb_logo,
   eventTrak,
+  share_prompts,
 };

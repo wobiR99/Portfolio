@@ -24,6 +24,7 @@ import {
   tripguide,
   threejs,
   buildHubb_logo,
+  share_prompts,
 } from "../assets";
 
 export const navLinks = [
@@ -105,10 +106,10 @@ const technologies = [
     name: "git",
     icon: git,
   },
-  {
-    name: "figma",
-    icon: figma,
-  },
+  // {
+  //   name: "figma",
+  //   icon: figma,
+  // },
   // {
   //   name: "docker",
   //   icon: docker,
@@ -188,6 +189,27 @@ const projects = [
     ],
     image: eventTrak,
     source_code_link: "https://event-trak-frontendd.vercel.app/",
+  },
+  {
+    name: "Share Prompts",
+    description:
+      " Web application that allows users to share, discover and make use of creative prompts .",
+    tags: [
+      {
+        name: "next",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "green-text-gradient",
+      },
+      {
+        name: "mongoDb",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: share_prompts,
+    source_code_link: "https://share-prompts-blond.vercel.app/",
   },
 ];
 
