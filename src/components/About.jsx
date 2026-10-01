@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 import Section from "./Section";
 
 const About = () => (
-  <Section id="about" index={3} eyebrow="About" title="A bit about me">
+  <Section id="about" index={3} eyebrow="About" title="About Me">
     <Reveal className="max-w-2xl space-y-5 text-base leading-relaxed text-muted sm:text-[17px]">
       {profile.bio.map((paragraph, index) => (
         <p key={paragraph} className={index === 0 ? "text-fg" : undefined}>
