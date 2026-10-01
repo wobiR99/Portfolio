@@ -6,15 +6,21 @@ export const profile = {
   email: "obiifeanyi.fi@gmail.com",
   headline: "I build clean, fast interfaces for the web.",
   summary:
-    "React and TypeScript developer based in Lagos, Nigeria, working remotely. I turn product ideas into responsive web apps that are simple to use and easy to maintain.",
+    "Frontend engineer with 3+ years building production web apps in React, Next.js and TypeScript. Based in Lagos, Nigeria, and open to relocation.",
   bio: [
-    "I'm a frontend engineer working mostly in React, TypeScript and Tailwind CSS. I build responsive interfaces that load quickly, behave the same across browsers and stay easy to change as a product grows.",
-    "I work closely with designers, product managers and other developers, take an active part in code reviews, and pick up new tools quickly. I enjoy turning loose ideas into software people find simple to use.",
+    "I'm a frontend engineer who cares about both the product and the pixels. I turn Figma designs into polished, accessible interfaces, build the component libraries and design systems that keep teams fast, and tune pages until they load quickly.",
+    "At BuildLabb I grew from frontend developer to team lead, guiding four engineers through planning, delegation and code review. Today I build and review software-engineering benchmark tasks for AI training at AfterQuery, and help Nigerian brands fix and speed up their Shopify storefronts.",
+    "I hold a first-class B.Eng in Electrical and Electronics Engineering from Covenant University.",
   ],
 };
 
 export const socials = [
   { name: "GitHub", href: "https://github.com/wobiR99", icon: "github" },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/ifeanyi-obi-a216a823b",
+    icon: "linkedin",
+  },
   { name: "Email", href: `mailto:${profile.email}`, icon: "mail" },
 ];
 
@@ -48,24 +54,73 @@ export const projects = [
 
 export const experiences = [
   {
-    title: "Frontend Developer",
-    company_name: "Buildhubb",
-    date: "May 2023 – Present",
+    title: "Software Engineer, AI Benchmark Tasks",
+    company_name: "AfterQuery",
+    date: "2025 – Present",
+    meta: "Contract · Remote",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-      "Utilizing Git version control and agile development methodologies to collaborate with cross-functional teams and deliver projects on time and within budget.",
+      "Build complete React and TypeScript reference apps, inject realistic defects, and write the Playwright end-to-end suites that grade AI coding agents against them.",
+      "Promoted to reviewer: audit other engineers' submissions against a 22-point quality checklist covering test validity, determinism and spec clarity.",
+      "Write technical specs and documentation precise enough for an autonomous agent to implement.",
+    ],
+  },
+  {
+    title: "E-commerce Engineer",
+    company_name: "Freelance",
+    date: "2025 – Present",
+    meta: "Lagos",
+    points: [
+      "Audit and fix Shopify storefronts for Nigerian D2C brands, covering theme code, page speed, product data and conversion issues.",
+      "Own each engagement end to end: scoping, fixed-price quoting, delivery and client reporting.",
+    ],
+  },
+  {
+    title: "Frontend Developer → Frontend Team Lead",
+    company_name: "BuildLabb",
+    date: "2023 – 2025",
+    points: [
+      "Led a team of 4 frontend engineers building component-driven web apps in React, Next.js and Tailwind CSS; ran sprint planning, task delegation and code reviews.",
+      "Built a shared UI component library and design system that cut feature delivery time by about 30% and made UI consistent across products.",
+      "Translated Figma designs into pixel-accurate, responsive interfaces in close iteration with designers.",
+      "Drove performance work (code splitting, image optimisation, Core Web Vitals) that contributed to a 15% increase in site traffic.",
+    ],
+  },
+  {
+    title: "Technical Support Intern",
+    company_name: "Castlenet Consulting",
+    date: "Apr – Sep 2023",
+    points: [
+      "Diagnosed and resolved software bugs and UI issues through cross-browser testing and troubleshooting.",
     ],
   },
 ];
 
 export const skills = [
-  { group: "Languages", items: ["JavaScript", "TypeScript", "HTML", "CSS"] },
+  {
+    group: "Languages",
+    items: ["TypeScript", "JavaScript", "HTML", "CSS", "SQL", "Python", "C++"],
+  },
   {
     group: "Frontend",
-    items: ["React", "Next.js", "Redux Toolkit", "Tailwind CSS", "Three.js"],
+    items: [
+      "React",
+      "Next.js",
+      "Redux",
+      "Tailwind CSS",
+      "Vite",
+      "React Native / Expo",
+    ],
   },
-  { group: "Tooling", items: ["Node.js", "Git"] },
+  {
+    group: "Backend and data",
+    items: ["Node.js", "REST APIs", "PostgreSQL", "Supabase"],
+  },
+  {
+    group: "Testing and tooling",
+    items: ["Playwright", "Lighthouse", "GitHub Actions", "Docker", "Git"],
+  },
+  {
+    group: "Design and platforms",
+    items: ["Figma", "Design systems", "Shopify", "Webflow"],
+  },
 ];

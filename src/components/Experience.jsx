@@ -11,9 +11,10 @@ const Experience = () => (
           key={`${experience.company_name}-${experience.date}`}
           className="grid gap-3 py-10 first:pt-0 last:pb-0 md:grid-cols-[12rem_minmax(0,1fr)] md:gap-10"
         >
-          <p className="font-mono text-xs uppercase tracking-wider text-muted md:pt-1.5">
-            {experience.date}
-          </p>
+          <div className="font-mono text-xs uppercase tracking-wider text-muted md:pt-1.5">
+            <p>{experience.date}</p>
+            {experience.meta && <p className="mt-1.5">{experience.meta}</p>}
+          </div>
           <div>
             <h3 className="text-base font-medium text-fg">
               {experience.title}
