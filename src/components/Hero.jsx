@@ -48,7 +48,7 @@ const Hero = () => (
         >
           Get in touch
         </a>
-        <ul className="ml-1 flex items-center gap-1">
+        <ul className="-ml-2.5 flex items-center gap-1 sm:ml-1">
           {socials.map((social) => (
             <li key={social.name}>
               <a
