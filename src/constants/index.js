@@ -1,4 +1,4 @@
-import { eventTrak, share_prompts } from "../assets";
+import { eventTrak, kainos, share_prompts } from "../assets";
 
 export const profile = {
   name: "Ifeanyi Obi",
@@ -32,6 +32,20 @@ export const navLinks = [
 ];
 
 export const projects = [
+  {
+    name: "KAINOS",
+    description:
+      "Online store for a Lagos clothing label, with a 3D garment rail and an AI shopping assistant that answers questions about sizing, stock and delivery.",
+    highlights: [
+      "Custom Shopify theme with no framework, and a hand-written WebGL rail that hangs the collection in 3D, built from the store's own product photos.",
+      "Node.js and TypeScript AI gateway behind the assistant: a router agent hands each question to a support or sales agent, grounded in the brand's policies and live Shopify stock.",
+      "Guardrails that catch promises the brand can't keep and hand the chat to a person, plus an evaluation set covering the whole catalogue.",
+    ],
+    tags: ["Shopify", "WebGL", "TypeScript", "Node.js", "Claude API"],
+    image: kainos,
+    liveUrl: "https://www.kainostrends.xyz/",
+    featured: true,
+  },
   {
     name: "EventTrak",
     description:
