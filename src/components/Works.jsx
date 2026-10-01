@@ -11,6 +11,7 @@ const ProjectCard = ({
   tags,
   image,
   liveUrl,
+  liveLabel,
   repoUrl,
   featured,
 }) => (
@@ -52,16 +53,27 @@ const ProjectCard = ({
             <ArrowUpRightIcon className="h-4 w-4 text-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         </h3>
-        {repoUrl && (
-          <a
-            href={repoUrl}
-            {...externalProps(repoUrl)}
-            aria-label={`${name} source code`}
-            className="font-mono text-xs text-muted transition-colors hover:text-fg"
-          >
-            Code
-          </a>
-        )}
+        <div className="flex shrink-0 items-baseline gap-4 font-mono text-xs text-muted">
+          {liveLabel && (
+            <a
+              href={liveUrl}
+              {...externalProps(liveUrl)}
+              className="transition-colors hover:text-fg"
+            >
+              {liveLabel}
+            </a>
+          )}
+          {repoUrl && (
+            <a
+              href={repoUrl}
+              {...externalProps(repoUrl)}
+              aria-label={`${name} source code`}
+              className="transition-colors hover:text-fg"
+            >
+              Code
+            </a>
+          )}
+        </div>
       </div>
       <p className="mt-2 text-sm leading-relaxed text-muted">{description}</p>
       {highlights && (

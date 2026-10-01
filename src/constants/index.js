@@ -44,7 +44,8 @@ export const projects = [
     ],
     tags: ["Shopify", "WebGL", "TypeScript", "Node.js", "Claude API"],
     image: kainos,
-    liveUrl: "https://www.kainostrends.xyz/",
+    liveUrl: "https://www.kainostrends.xyz",
+    liveLabel: "www.kainostrends.xyz",
     featured: true,
   },
   {
