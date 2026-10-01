@@ -40,6 +40,7 @@ export const projects = [
       "Custom Shopify theme with no framework, and a hand-written WebGL rail that hangs the collection in 3D, built from the store's own product photos.",
       "Node.js and TypeScript AI gateway behind the assistant: a router agent hands each question to a support or sales agent, grounded in the brand's policies and live Shopify stock.",
       "Guardrails that catch promises the brand can't keep and hand the chat to a person, plus an evaluation set covering the whole catalogue.",
+      "Cut the cost per message by over 80%, from $0.032 to $0.006, by removing duplicated context and turning on prompt caching.",
     ],
     tags: ["Shopify", "WebGL", "TypeScript", "Node.js", "Claude API"],
     image: kainos,
