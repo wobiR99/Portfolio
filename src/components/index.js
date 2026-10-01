@@ -1,9 +1,9 @@
-import { StarsCanvas } from "./canvas";
+import About from "./About";
+import Contact from "./Contact";
+import Experience from "./Experience";
+import Footer from "./Footer";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
-import About from "./About";
-import Experience from "./Experience";
 import Works from "./Works";
-import Contact from "./Contact";
 
-export { Hero, Navbar, About, Experience, Works, Contact, StarsCanvas };
+export { About, Contact, Experience, Footer, Hero, Navbar, Works };

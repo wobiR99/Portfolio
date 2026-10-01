@@ -1,58 +1,44 @@
-import React from "react";
-import { Tilt } from "react-tilt";
-import { motion } from "framer-motion";
-import { styles } from "../style";
-import { services } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
-import { SectionWrapper } from "../hoc";
+import { profile, skills } from "../constants";
+import Reveal from "./Reveal";
+import Section from "./Section";
 
-const ServiceCard = ({ index, title, icon }) => {
-  return (
-    <Tilt className="xs:w-[250px] w-full">
-      <motion.div
-        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-        className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
-      >
-        <div
-          options={{ max: 45, scale: 1, speed: 450 }}
-          className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
-        >
-          <img src={icon} alt={title} className="w-16 h-16 object-contain" />
-          <h3 className="text-white text-[20px] font-bold text-center">
-            {title}
-          </h3>
-        </div>
-      </motion.div>
-    </Tilt>
-  );
-};
-
-const About = () => {
-  return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
-
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-      >
-        I'm a skilled software developer with experience in Javascript, and
-        expertise in frameworks like React. I'm a quick learner and collaborate
-        closely with clients to create efficient, scalable, and user-friendly
-        solutions that solve real-world problems. Let's work together to bring
-        your ideas to life!
-      </motion.p>
-
-      <div className="mt-20 flex flex-wrap gap-10 ">
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
+const About = () => (
+  <Section id="about" index={3} eyebrow="About" title="A bit about me">
+    <div className="grid gap-14 md:grid-cols-[minmax(0,1fr)_18rem] md:gap-20">
+      <Reveal className="space-y-5 text-base leading-relaxed text-muted sm:text-[17px]">
+        {profile.bio.map((paragraph, index) => (
+          <p key={paragraph} className={index === 0 ? "text-fg" : undefined}>
+            {paragraph}
+          </p>
         ))}
-      </div>
-    </>
-  );
-};
+      </Reveal>
 
-export default SectionWrapper(About, "about");
+      <Reveal delay={0.1}>
+        <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+          Stack
+        </h3>
+        <dl className="mt-6 space-y-6">
+          {skills.map((skill) => (
+            <div key={skill.group}>
+              <dt className="text-sm text-fg">{skill.group}</dt>
+              <dd className="mt-3">
+                <ul className="flex flex-wrap gap-2">
+                  {skill.items.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-full border border-line px-3 py-1 text-xs text-muted"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </Reveal>
+    </div>
+  </Section>
+);
+
+export default About;

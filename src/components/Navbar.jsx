@@ -1,76 +1,93 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { styles } from "../style";
-import { navLinks } from "../constants";
-import { portfolioLogo, menu, close } from "../assets";
+import { useEffect, useState } from "react";
+import { navLinks, profile } from "../constants";
+import { CloseIcon, LogoMark, MenuIcon } from "./Icons";
 
 const Navbar = () => {
-  const [active, setActive] = useState("");
-  const [toggle, setToggle] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
+  const solid = scrolled || open;
+
   return (
-    <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary `}
+    <header
+      className={`sticky top-0 z-30 border-b transition-colors duration-300 ${
+        solid ? "border-line bg-bg/80 backdrop-blur-md" : "border-transparent"
+      }`}
     >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <Link
-          to="/"
-          className="flex items-center gap-2"
-          onClick={() => {
-            setActive("");
-            window.scrollTo(0, 0);
-          }}
+      <nav
+        aria-label="Main"
+        className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6 sm:px-8"
+      >
+        <a
+          href="#top"
+          onClick={() => setOpen(false)}
+          className="flex items-center gap-2.5 text-sm font-medium tracking-tight text-fg"
         >
-          <img src={portfolioLogo} className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex ">
-            Ifeanyi &nbsp; <span className="sm:block hidden">| Obi</span>
-          </p>
-        </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+          <LogoMark className="h-4 w-4" />
+          {profile.name}
+        </a>
+
+        <ul className="hidden items-center gap-8 sm:flex">
           {navLinks.map((link) => (
-            <li
-              key={link.id}
-              onClick={() => setActive(link.title)}
-              className={`${
-                active === link.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
-            >
-              <a href={`#${link.id}`}>{link.title}</a>
+            <li key={link.id}>
+              <a
+                href={`#${link.id}`}
+                className="text-sm text-muted transition-colors hover:text-fg"
+              >
+                {link.title}
+              </a>
             </li>
           ))}
         </ul>
 
-        <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
-            onClick={() => setToggle(!toggle)}
-          />
-          <div
-            className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
-          >
-            <ul className="list-none flex flex-col gap-4 items-start justify-end">
-              {navLinks.map((link) => (
-                <li
-                  key={link.id}
-                  onClick={() => {
-                    setToggle(!toggle);
-                    setActive(link.title);
-                  }}
-                  className={`${
-                    active === link.title ? "text-white" : "text-secondary"
-                  }font-poppins font-medium cursor-pointer text-[16px]`}
-                >
-                  <a href={`#${link.id}`}>{link.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <button
+          type="button"
+          onClick={() => setOpen((value) => !value)}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          aria-label={open ? "Close menu" : "Open menu"}
+          className="-mr-2 rounded-md p-2 text-muted transition-colors hover:text-fg sm:hidden"
+        >
+          {open ? (
+            <CloseIcon className="h-5 w-5" />
+          ) : (
+            <MenuIcon className="h-5 w-5" />
+          )}
+        </button>
+      </nav>
+
+      <div id="mobile-menu" hidden={!open} className="border-t border-line sm:hidden">
+        <ul className="mx-auto flex max-w-5xl flex-col px-6 py-3">
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <a
+                href={`#${link.id}`}
+                onClick={() => setOpen(false)}
+                className="block py-3 text-base text-muted transition-colors hover:text-fg"
+              >
+                {link.title}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
-    </nav>
+    </header>
   );
 };
 

@@ -1,62 +1,56 @@
-import {
-  mobile,
-  creator,
-  web,
-  eventTrak,
-  buildHubb_logo,
-  share_prompts,
-} from "../assets";
+import { eventTrak, share_prompts } from "../assets";
+
+export const profile = {
+  name: "Ifeanyi Obi",
+  role: "Frontend Engineer",
+  email: "obiifeanyi.fi@gmail.com",
+  headline: "I build clean, fast interfaces for the web.",
+  summary:
+    "React and TypeScript developer based in Lagos, Nigeria, working remotely. I turn product ideas into responsive web apps that are simple to use and easy to maintain.",
+  bio: [
+    "I'm a frontend engineer working mostly in React, TypeScript and Tailwind CSS. I build responsive interfaces that load quickly, behave the same across browsers and stay easy to change as a product grows.",
+    "I work closely with designers, product managers and other developers, take an active part in code reviews, and pick up new tools quickly. I enjoy turning loose ideas into software people find simple to use.",
+  ],
+};
+
+export const socials = [
+  { name: "GitHub", href: "https://github.com/wobiR99", icon: "github" },
+  { name: "Email", href: `mailto:${profile.email}`, icon: "mail" },
+];
 
 export const navLinks = [
+  { id: "work", title: "Work" },
+  { id: "experience", title: "Experience" },
+  { id: "about", title: "About" },
+  { id: "contact", title: "Contact" },
+];
+
+export const projects = [
   {
-    id: "about",
-    title: "About",
+    name: "EventTrak",
+    description:
+      "Event management app for finding events, buying tickets and managing reservations.",
+    tags: ["React", "Redux", "Tailwind CSS"],
+    image: eventTrak,
+    liveUrl: "https://event-trak-frontendd.vercel.app/",
+    repoUrl: "https://github.com/wobiR99/EventTrak",
   },
   {
-    id: "work",
-    title: "Work",
-  },
-  {
-    id: "contact",
-    title: "Contact",
+    name: "Share Prompts",
+    description:
+      "A place to discover, create and share AI prompts, with search by tag or username.",
+    tags: ["Next.js", "Tailwind CSS", "MongoDB"],
+    image: share_prompts,
+    liveUrl: "https://share-prompts-blond.vercel.app/",
+    repoUrl: "https://github.com/wobiR99/Share-Prompts",
   },
 ];
 
-const services = [
-  {
-    title: "Frontend Developer",
-    icon: web,
-  },
-  {
-    title: "React Developer",
-    icon: mobile,
-  },
-  {
-    title: "Frontend Engineer",
-    icon: creator,
-  },
-  {
-    title: "Web developer",
-    icon: web,
-  },
-];
-
-
-//Frontend DeveloperFrontend Developer
-//BuildLabb · ContractBuildLabb · Contract
-//May 2023 - Present · 7 mosMay 2023 - Present · 7 mos
-//Lagos State, Nigeria · RemoteLagos State, Nigeria · Remote
-//- Developed responsive and user-friendly websites using HTML, CSS, and JavaScript, resulting in a 15% increase in website traffic and a 20% decrease in bounce rate.
-//- Collaborated with UX designers to implement intuitive and visually appealing interfaces, resulting in a 25% increase in user satisfaction and engagement.
-//- Utilized Git version control and agile development methodologies to collaborate with cross-functional teams and deliver projects on time and within budget.
-
-const experiences = [
+export const experiences = [
   {
     title: "Frontend Developer",
     company_name: "Buildhubb",
-    icon: buildHubb_logo,
-    iconBg: "#383E56",
-    date: "May 2023 - Present",
+    date: "May 2023 – Present",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -67,76 +61,11 @@ const experiences = [
   },
 ];
 
-const testimonials = [
-  // {
-  //   testimonial:
-  //     "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-  //   name: "Sara Lee",
-  //   designation: "CFO",
-  //   company: "Acme Co",
-  //   image: "https://randomuser.me/api/portraits/women/4.jpg",
-  // },
-  // {
-  //   testimonial:
-  //     "I've never met a web developer who truly cares about their clients' success like Rick does.",
-  //   name: "Chris Brown",
-  //   designation: "COO",
-  //   company: "DEF Corp",
-  //   image: "https://randomuser.me/api/portraits/men/5.jpg",
-  // },
-  // {
-  //   testimonial:
-  //     "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-  //   name: "Lisa Wang",
-  //   designation: "CTO",
-  //   company: "456 Enterprises",
-  //   image: "https://randomuser.me/api/portraits/women/6.jpg",
-  // },
-];
-
-const projects = [
+export const skills = [
+  { group: "Languages", items: ["JavaScript", "TypeScript", "HTML", "CSS"] },
   {
-    name: "EventTrak",
-    description:
-      " Web application that allows users to manage their event-related needs. Involves finding events, purchasing tickets, and managing reservations.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "green-text-gradient",
-      },
-      {
-        name: "redux",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: eventTrak,
-    source_code_link: "https://event-trak-frontendd.vercel.app/",
+    group: "Frontend",
+    items: ["React", "Next.js", "Redux Toolkit", "Tailwind CSS", "Three.js"],
   },
-  {
-    name: "Share Prompts",
-    description:
-      " Web application that allows users to share, discover and make use of creative prompts .",
-    tags: [
-      {
-        name: "next",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "green-text-gradient",
-      },
-      {
-        name: "mongoDb",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: share_prompts,
-    source_code_link: "https://share-prompts-blond.vercel.app/",
-  },
+  { group: "Tooling", items: ["Node.js", "Git"] },
 ];
-
-export { services, experiences, testimonials, projects };
