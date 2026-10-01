@@ -57,7 +57,7 @@ const StarsCanvas = () => {
     <div
       ref={containerRef}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 -z-10 opacity-60 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
+      className="pointer-events-none absolute inset-0 -z-10 animate-[fade-in_1.5s_ease-out_both] opacity-60 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
     >
       <Canvas
         camera={{ position: [0, 0, 1] }}
