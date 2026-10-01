@@ -1,35 +1,33 @@
-import { BrowserRouter } from "react-router-dom";
+import { MotionConfig } from "framer-motion";
 import {
   About,
   Contact,
   Experience,
-  Feedbacks,
+  Footer,
   Hero,
   Navbar,
-  Tech,
   Works,
-  StarsCanvas,
 } from "./components";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar />
-          <Hero />
-        </div>
-        <About />
-        <Experience />
-        <Tech />
+    <MotionConfig reducedMotion="user">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-fg focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-bg"
+      >
+        Skip to content
+      </a>
+      <Navbar />
+      <main id="main" tabIndex={-1} className="outline-none">
+        <Hero />
         <Works />
-        <Feedbacks />
-        <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
-        </div>
-      </div>
-    </BrowserRouter>
+        <Experience />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+    </MotionConfig>
   );
 }
 

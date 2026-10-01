@@ -1,71 +1,40 @@
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import { motion } from "framer-motion";
-import "react-vertical-timeline-component/style.min.css";
-
-import { styles } from "../style";
 import { experiences } from "../constants";
-import { SectionWrapper } from "../hoc";
-import { textVariant } from "../utils/motion";
+import Reveal from "./Reveal";
+import Section from "./Section";
 
-const ExperienceCard = ({ experience }) => {
-  return (
-    <VerticalTimelineElement
-      contentStyle={{ background: "#1d1836", color: "#fff" }}
-      contentArrowStyle={{ borderRight: "7px xolid #232631" }}
-      date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
-      icon={
-        <div className="flex justify-center items-center w-full h-full">
-          <img
-            src={experience.icon}
-            alt={experience.company_name}
-            className="w-[60%] h-[60%] object-contain"
-          />
-        </div>
-      }
-    >
-      <div>
-        <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
-        <p
-          className="text-secondary text-[16px] font-semibold"
-          style={{ margin: 0 }}
+const Experience = () => (
+  <Section id="experience" index={2} eyebrow="Experience" title="Where I've worked">
+    <ol className="divide-y divide-line">
+      {experiences.map((experience) => (
+        <Reveal
+          as="li"
+          key={`${experience.company_name}-${experience.date}`}
+          className="grid gap-3 py-10 first:pt-0 last:pb-0 md:grid-cols-[12rem_minmax(0,1fr)] md:gap-10"
         >
-          {experience.company_name}
-        </p>
-      </div>
-      <ul className="mt-5 ml-5 list-disc space-y-2">
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
-          >
-            {point}
-          </li>
-        ))}
-      </ul>
-    </VerticalTimelineElement>
-  );
-};
+          <div className="font-mono text-xs uppercase tracking-wider text-muted md:pt-1.5">
+            <p>{experience.date}</p>
+            {experience.meta && <p className="mt-1.5">{experience.meta}</p>}
+          </div>
+          <div>
+            <h3 className="text-base font-medium text-fg">
+              {experience.title}
+              <span className="text-muted"> · {experience.company_name}</span>
+            </h3>
+            <ul className="mt-4 max-w-2xl space-y-2.5 text-sm leading-relaxed text-muted">
+              {experience.points.map((point) => (
+                <li
+                  key={point}
+                  className="relative pl-5 before:absolute before:left-0 before:top-[0.7em] before:h-px before:w-2.5 before:bg-subtle"
+                >
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
+      ))}
+    </ol>
+  </Section>
+);
 
-const Experience = () => {
-  return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>What I have done so far</p>
-        <h2 className={styles.sectionHeadText}>Work Experience.</h2>
-      </motion.div>
-      <div className="mt-20 flex flex-col">
-        <VerticalTimeline>
-          {experiences.map((experience, index) => (
-            <ExperienceCard key={index} experience={experience} />
-          ))}
-        </VerticalTimeline>
-      </div>
-    </>
-  );
-};
-
-export default SectionWrapper(Experience, "work");
+export default Experience;
