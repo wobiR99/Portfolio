@@ -2,13 +2,14 @@ import { eventTrak, kainos, share_prompts } from "../assets";
 
 export const profile = {
   name: "Ifeanyi Obi",
-  role: "Frontend Engineer",
+  role: "Software Engineer",
   email: "obiifeanyi.fi@gmail.com",
-  headline: "I build clean, fast interfaces for the web.",
+  headline: "I build systems end to end.",
   summary:
-    "Frontend engineer with 3+ years building production web apps in React, Next.js and TypeScript. Based in Lagos, Nigeria, and open to relocation.",
+    "Software engineer in Lagos (GMT+1). I build from the interface to the server underneath, I'm working toward AI infrastructure, and I co-founded KAINOS, a small-batch clothing label. Open to remote roles and relocation.",
   bio: [
-    "I'm a frontend engineer who cares about both the product and the pixels. I turn Figma designs into polished, accessible interfaces, build the component libraries and design systems that keep teams fast, and tune pages until they load quickly.",
+    "I'm a software engineer who started at the interface and is working down the stack. I turn Figma designs into polished, accessible interfaces and build the component libraries that keep teams fast. In 2027 I'm learning infrastructure in public, one module at a time, from Linux to GPU model serving.",
+    "I also co-founded KAINOS, a small-batch clothing label in Lagos, and built its storefront myself, including a 3D store you can walk through.",
     "At BuildLabb I grew from frontend developer to team lead, guiding four engineers through planning, delegation and code review. Today I build and review software-engineering benchmark tasks for AI training at AfterQuery, and help Nigerian brands fix and speed up their Shopify storefronts.",
     "I hold a first-class B.Eng in Electrical and Electronics Engineering from Covenant University.",
   ],
@@ -35,7 +36,7 @@ export const projects = [
   {
     name: "KAINOS",
     description:
-      "Online store for a Lagos clothing label, with a 3D garment rail and an AI shopping assistant that answers questions about sizing, stock and delivery.",
+      "Online store for KAINOS, the Lagos clothing label I co-founded, with a 3D garment rail and an AI shopping assistant that answers questions about sizing, stock and delivery. The assistant is built but currently offline.",
     highlights: [
       "Custom Shopify theme with no framework, and a hand-written WebGL rail that hangs the collection in 3D, built from the store's own product photos.",
       "Node.js and TypeScript AI gateway behind the assistant: a router agent hands each question to a support or sales agent, grounded in the brand's policies and live Shopify stock.",
